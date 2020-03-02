@@ -13,7 +13,7 @@ public class OSMonitorApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         //1、加载.fxml文件
-        FXMLLoader loader = new FXMLLoader(getClass().getResource
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource
                 ("os_monitor_tab.fxml"));
         //2、真正的加载
         Parent root = loader.load();

@@ -5,11 +5,11 @@ import java.lang.management.ManagementFactory;
 import com.sun.management.OperatingSystemMXBean;
 
 public class OSResource {
-    private OperatingSystemMXBean mxBean = ManagementFactory.getPlatformMXBean(
+    private static OperatingSystemMXBean mxBean = ManagementFactory.getPlatformMXBean(
             OperatingSystemMXBean.class);
 
     private static final int DATA_LENGH = 60;
-    private static XYPair[] cpuDatas = new XYPair[DATA_LENGH];
+    private static XYPair[] xyPairs = new XYPair[DATA_LENGH];
     private static int firstIndex = DATA_LENGH;
 
     public static XYPair[] getCPUPercetage() {/*static*/
@@ -34,7 +34,7 @@ public class OSResource {
         xyPairs[movIdx] = new XYPair(movIdx, cpuPercetage);
 
 
-        static {
+        static{
             for (int i = 0; i < xyPairs.length; ++i) {
                 xyPairs[i] = new XYPair(0, 0);
             }
